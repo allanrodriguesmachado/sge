@@ -12,6 +12,8 @@
             <input type="text" name="email" placeholder="Digite o E-mail">
         </div>
 
+        <x-message.error field="email"/>
+
         <div>
             <label for="phone">Telefone</label>
             <input type="text" name="phone" placeholder="Digite o Telefone">
