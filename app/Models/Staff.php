@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-use Database\Factories\TeamsFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Teams extends Model
+class Staff extends Model
 {
-    /** @use HasFactory<TeamsFactory> */
+    /** @use HasFactory<\Database\Factories\StaffFactory> */
     use HasFactory;
 }

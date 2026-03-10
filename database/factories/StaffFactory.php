@@ -6,13 +6,11 @@ use Faker\Provider\pt_BR\PhoneNumber;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Teams>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Staff>
  */
-class TeamsFactory extends Factory
+class StaffFactory extends Factory
 {
     /**
-     * Define the model's default state.
-     *
      * @return array<string, mixed>
      */
     public function definition(): array
@@ -23,12 +21,11 @@ class TeamsFactory extends Factory
             'separator' => '-',
         ]);
 
-        var_dump($phoneFaker);
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $phoneFaker,
-            'shift' => $this->faker->randomElement(['Morning', 'Afternoon', 'Full']),
+            'work_shift' => $this->faker->randomElement(['morning', 'afternoon', 'full']),
         ];
     }
 }
