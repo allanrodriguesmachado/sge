@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('afternoon')->default(0);
             $table->integer('full_time')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

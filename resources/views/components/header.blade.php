@@ -18,6 +18,10 @@
                class="rounded-md px-3 py-2 text-sm font-medium transition {{ request()->routeIs('staff.*') ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100' }}">
                 Equipe
             </a>
+            <a href="{{ route('class.index') }}"
+               class="rounded-md px-3 py-2 text-sm font-medium transition {{ request()->routeIs('class.*') ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100' }}">
+                Turma
+            </a>
         </div>
 
         <div class="flex items-center gap-2">
@@ -57,6 +61,10 @@
             <a href="{{ route('staff.index') }}"
                class="rounded-md px-3 py-2 text-sm font-medium transition {{ request()->routeIs('staff.*') ? 'bg-indigo-50 text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100' }}">
                 Equipe
+
+            <a href="{{ route('class.index') }}"
+               class="rounded-md px-3 py-2 text-sm font-medium transition {{ request()->routeIs('class.*') ? 'bg-indigo-50 text-indigo-300 dark:bg-indigo-500/20 dark:text-indigo-300' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100' }}">
+                Turma
             </a>
         </div>
     </div>

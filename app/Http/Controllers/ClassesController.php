@@ -13,7 +13,9 @@ class ClassesController extends Controller
      */
     public function index()
     {
-        //
+        $classes = Classes::query()->get();
+
+        return view('classes.index', compact('classes'));
     }
 
     /**
@@ -59,8 +61,10 @@ class ClassesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Classes $classes)
+    public function destroy(Classes $class)
     {
-        //
+        $class->delete();
+
+        return to_route('class.index');
     }
 }

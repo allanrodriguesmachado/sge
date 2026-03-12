@@ -9,5 +9,5 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('staff', StaffController::class);
-Route::resource('classes', ClassesController::class);
+Route::resource('class', ClassesController::class);
 

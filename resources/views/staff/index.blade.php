@@ -11,7 +11,7 @@
 
         @if($staffs->isEmpty())
             <div class="rounded-xl border border-dashed border-slate-300 bg-slate-50 py-12 text-center dark:border-slate-700 dark:bg-slate-800/40">
-                <p class="text-slate-500 dark:text-slate-300">Nenhum funcionario cadastrado ainda.</p>
+                <p class="text-slate-500 dark:text-slate-300">Nenhuma funcionario cadastrado ainda.</p>
             </div>
         @else
             <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
