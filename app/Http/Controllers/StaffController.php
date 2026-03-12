@@ -10,9 +10,9 @@ class StaffController extends Controller
 {
     public function index()
     {
-        return view('staff.index', [
-            'staffs' => Staff::query()->get()
-        ]);
+        $staffs = Staff::query()->get();
+
+        return view('staff.index', compact('staffs'));
     }
 
     public function create()
@@ -20,9 +20,6 @@ class StaffController extends Controller
         return view('staff.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreStaffRequest $request)
     {
         Staff::create($request->validated());
@@ -30,35 +27,26 @@ class StaffController extends Controller
         return view('staff.create')->with('success', 'Staff member created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Staff $staff)
     {
-        //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Staff $staff)
     {
-        //
+        return view('staff.edit', compact('staff'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateStaffRequest $request, Staff $staff)
     {
-        //
+        $staff->update($request->validated());
+
+        return to_route('staff.index')->with('success', 'Staff member updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Staff $staff)
     {
-        //
+        $staff->delete();
+
+        return to_route('staff.index')->with('success', 'Staff member deleted successfully.');
     }
 }
