@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->foreignId('staff_id')->constrained('staff')->onDelete('cascade');
+            $table->integer('morning')->default(0);
+            $table->integer('afternoon')->default(0);
+            $table->integer('full_time')->default(0);
             $table->timestamps();
         });
     }
