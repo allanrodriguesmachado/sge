@@ -3,7 +3,7 @@
         <div class="mb-6 flex items-center justify-between border-b border-slate-200 pb-4 dark:border-slate-700">
             <h1 class="text-2xl font-bold text-slate-800 dark:text-slate-100">Equipe Escolar</h1>
 
-            <a href="{{ route('staff.create') }}"
+            <a href="{{ route('class.create') }}"
                class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">
                 + Adicionar Turma
             </a>
@@ -38,6 +38,7 @@
                             </td>
                         </tr>
                     @endforeach
+
                     </tbody>
                 </table>
             </div>

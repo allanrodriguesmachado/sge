@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Classes;
 use App\Http\Requests\StoreClassesRequest;
 use App\Http\Requests\UpdateClassesRequest;
+use App\Models\Staff;
 
 class ClassesController extends Controller
 {
@@ -18,12 +19,11 @@ class ClassesController extends Controller
         return view('classes.index', compact('classes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $staffs = Staff::query()->get();
+
+        return view('classes.create', compact('staffs'));
     }
 
     /**
