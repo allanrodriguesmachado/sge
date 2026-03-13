@@ -6,15 +6,15 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('staff', function (Blueprint $table) {
+        Schema::create('class_staff', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone')->nullable();
-            $table->enum('work_shift', ['morning', 'afternoon', 'full']);
-            $table->boolean('is_admin')->default(false);
+            $table->foreignId('class_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('staff_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('staff');
+        Schema::dropIfExists('class_staff');
     }
 };
