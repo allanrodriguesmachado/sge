@@ -10,4 +10,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::resource('staff', StaffController::class);
 Route::resource('class', ClassesController::class);
+Route::resource('task', DashboardController::class);
 
