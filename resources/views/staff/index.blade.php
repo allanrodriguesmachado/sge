@@ -20,6 +20,7 @@
                     <tr>
                         <th class="w-16 border-b border-slate-200 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-600 dark:border-slate-700 dark:text-slate-300">#</th>
                         <th class="border-b border-slate-200 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-600 dark:border-slate-700 dark:text-slate-300">Nome</th>
+                        <th class="border-b border-slate-200 px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-slate-600 dark:border-slate-700 dark:text-slate-300">E-mail</th>
                         <th class="border-b border-slate-200 px-4 py-3 text-right text-xs font-semibold uppercase tracking-wider text-slate-600 dark:border-slate-700 dark:text-slate-300">Acoes</th>
                     </tr>
                     </thead>
@@ -28,7 +29,9 @@
                         <tr class="transition hover:bg-slate-50 dark:hover:bg-slate-800/60">
                             <td class="px-4 py-3 text-sm text-slate-500 dark:text-slate-400">{{ $staff->id }}</td>
                             <td class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-slate-100">{{ $staff->name }}</td>
+                            <td class="px-4 py-3 text-sm font-medium text-slate-900 dark:text-slate-100">{{ \Illuminate\Support\Str::mask($staff->email, '*', 9) }}</td>
                             <td class="space-x-2 px-4 py-3 text-right text-sm">
+                                <a href="{{ route('staff.show', $staff) }}" class="font-medium text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300">Ver</a>
                                 <a href="{{ route('staff.edit', $staff) }}" class="font-medium text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300">Editar</a>
                                 <form action="{{ route('staff.destroy', $staff) }}" method="POST" class="inline-block">
                                     @csrf

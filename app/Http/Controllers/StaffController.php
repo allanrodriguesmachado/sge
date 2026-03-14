@@ -29,6 +29,7 @@ class StaffController extends Controller
 
     public function show(Staff $staff)
     {
+        dd($staff);
     }
 
     public function edit(Staff $staff)
